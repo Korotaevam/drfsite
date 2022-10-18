@@ -20,11 +20,13 @@ class WomenAPIListPagination(PageNumberPagination):
     max_page_size = 10000
 
 
+
 class WomenAPIList(generics.ListCreateAPIView):
     queryset = Women.objects.all()
     serializer_class = WomenSerializer
     permission_classes = (IsAuthenticatedOrReadOnly,)
     pagination_class = WomenAPIListPagination
+
 
 
 class WomenAPIUpdate(generics.RetrieveUpdateAPIView):
